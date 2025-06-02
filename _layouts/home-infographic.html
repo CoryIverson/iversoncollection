@@ -11,7 +11,7 @@ layout: page
   <div class="card-header h5">Sample Items</div>
   <div class="card-body">
     <div class="row">
-      {% assign samples = site.data.metadata | where: "id", "mg101_b6_psychiana_photographs_002.jpg" | push: (site.data.metadata | where: "id", "mg101_b6_psychiana_photographs_019.jpg")[0] | push: (site.data.metadata | where: "id", "mg101_b6_psychiana_photographs_015.jpg")[0] %}
+      {% assign samples = site.data.metadata | where: "id", "psychiana011" | push: (site.data.metadata | where: "id", "psychiana033")[0] | push: (site.data.metadata | where: "id", "psychiana038")[0] %}
       {% for item in samples %}
         <div class="col-md-4 mb-3">
           {% include item-infographic.html item=item %}
