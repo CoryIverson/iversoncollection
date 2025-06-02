@@ -7,24 +7,16 @@ layout: page
   <div class="col-md-8">
 
     {% include index/description.html %}
-    {% include index/carousel.html title="Sample Items" height="300" %}
-  
+ <div class="card mb-3">
+  <div class="card-header h5">Sample Items</div>
+  <div class="card-body">
+    <div class="row">
+      {% assign samples = site.data.metadata | where: "id", "mg101_b6_psychiana_photographs_002.jpg" | push: (site.data.metadata | where: "id", "mg101_b6_psychiana_photographs_019.jpg")[0] | push: (site.data.metadata | where: "id", "mg101_b6_psychiana_photographs_015.jpg")[0] %}
+      {% for item in samples %}
+        <div class="col-md-4 mb-3">
+          {% include item-infographic.html item=item %}
+        </div>
+      {% endfor %}
+    </div>
   </div>
-  <div class="col-md-4">  
-
-    {% include index/time.html %}
-
-    {% include index/featured-terms.html field="subject" title="Top Subjects" btn-color="primary" %}
-
-    {% include index/featured-terms.html field="location" title="Locations" btn-color="outline-secondary" %}
-
-    {% include index/objects.html %}
-
-  </div>
-  <div class="col-md-12">
-
-    {% include index/data-download.html %}
-
-  </div>
-  
 </div>
